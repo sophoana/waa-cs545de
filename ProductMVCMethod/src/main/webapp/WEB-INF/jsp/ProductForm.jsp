@@ -15,9 +15,9 @@
 	<div id="global">
 		<form:form action="product" method="post" commandName="product">
 			<fieldset>
-				<legend>Add a product</legend>
+				<legend><spring:message code="productForm.title"/> </legend>
 				<p>
-					<label for="category">Category: </label>
+					<label for="category"><spring:message code="product.categories"/> </label>
 										
 					<form:select id="category" path="category.id">  
 						<form:option value="0" label="--Select Category"/>  
@@ -26,15 +26,15 @@
 				</p>
 
 				<p>
-					<label for="name">Product Name: </label> 
+					<label for="name"><spring:message code="product.name" /> </label> 
 					<form:input type="text" id="name" path="name" />
 				</p>
 				<p>
-					<label for="description">Description: </label> 
+					<label for="description"><spring:message code="product.description" /> </label> 
 					<form:input type="text" id="description" value="${product.description}" path="description" />
 				</p>
 				<p>
-					<label for="price">Price: </label> 
+					<label for="price"><spring:message code="product.price"/> </label> 
 					<form:input type="text" id="price" path="price" />
 				</p>
 				<p id="buttons">
