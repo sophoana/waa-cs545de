@@ -35,10 +35,7 @@ package mum.edu.domain.dto;
 
 		public void setMessage(String message) {
 			this.message = message;
-		}
-	 
-
-	 
+		}			
  	}
 	
  
