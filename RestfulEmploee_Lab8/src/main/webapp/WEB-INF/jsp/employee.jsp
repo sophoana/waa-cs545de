@@ -32,10 +32,9 @@
 			</tr>
 		</table>
 	</form>
-		<!-- Success - or Validation errors -->
-    	<div id="errors" style="display:none" >   	
-      	</div>
- 
+		
+	<!-- Success - or Validation errors -->
+    <div id="errors" style="display:none"></div>
    	<div id="formInput" style="display:none" > </div>
 </body>
 </html>
