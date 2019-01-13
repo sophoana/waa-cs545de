@@ -1,25 +1,35 @@
  
-function makeAjaxCall(){
+function makeAjaxCall(event){
+	
 
-
+	event.preventDefault();
+	
+	var data = JSON.stringify(serializeObject($('#employeeForm')));
+	var contextRoot = "/" + window.location.pathname.split('/')[1];
+	alert(data);
 	
 	$.ajax({
- 
-		success: function(       ) {
-			$('#formInput').html("");
-			$("#formInput").append( '<H3 align="center"> New Employee Information <H3>');                
-			$('#formInput').append("<H4 align='center'>First Name:  " +   + "</h4>"  );
-			$('#formInput').append("<H4 align='center'>Last Name: " +   + "</h4>" );
-			$('#formInput').append("<H4 align='center'>Email: " +   + "</h4>");
-			$("#formInput").append('<h4 align="center"> <a href="#" onclick="toggle_visibility(\'formInput\');resetForm(\'employeeForm\');"><b>EXIT</b> </a> </h4>');
-			make_visible('formInput');
-			make_hidden('errors');
+		url: contextRoot + "/addEmployee",
+		type: 'POST',
+		contentType: 'application/json',
+		dataType: "json",
+		data: data,
+		success: function(  response    ) {
+//			$('#formInput').html("");
+//			$("#formInput").append( '<H3 align="center"> New Employee Information <H3>');                
+//			$('#formInput').append("<H4 align='center'>First Name:  " +   + "</h4>"  );
+//			$('#formInput').append("<H4 align='center'>Last Name: " +   + "</h4>" );
+//			$('#formInput').append("<H4 align='center'>Email: " +   + "</h4>");
+//			$("#formInput").append('<h4 align="center"> <a href="#" onclick="toggle_visibility(\'formInput\');resetForm(\'employeeForm\');"><b>EXIT</b> </a> </h4>');
+//			make_visible('formInput');
+//			make_hidden('errors');
+			alert(response);
 		},
 
-		error: function(        ){	
+		error: function(   response     ){	
 			
 
-
+			alert('Error');	
 			
 			
 			
@@ -31,6 +41,10 @@ function makeAjaxCall(){
 		}
 	
 	});
+}
+
+function makeAjaxCallTest(){
+	alert('helsslo');
 }
 
 toggle_visibility = function(id) {
