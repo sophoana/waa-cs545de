@@ -2,6 +2,8 @@ package com.packt.webstore.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,7 +48,7 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewEmployee(@ModelAttribute("newEmployee") Employee employeeToBeAdded,
+	public String processAddNewEmployee(@ModelAttribute("newEmployee") @Valid Employee employeeToBeAdded,
 			BindingResult result) {
 
 		if (result.hasErrors())
